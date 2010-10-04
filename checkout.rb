@@ -68,7 +68,7 @@ post '/checkout' do
  end
 
  # send invoice
- if @invoice.deliver
+ if @invoice.deliver({ 'recipients' => [@client.email] })
     #reload the invoice
     @invoice = CurdBee::Invoice.show(@invoice.id)
     redirect @invoice.permalink
