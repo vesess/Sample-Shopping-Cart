@@ -1,3 +1,3 @@
-require 'hello'
+require 'checkout'
 run Sinatra::Application
 
