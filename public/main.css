@@ -1,0 +1,57 @@
+body { font-size: 75%; color: #333; background-color: #FFF; margin: 0; padding: 0; }
+
+h1, h2, h3 { font-weight: normal; }
+h1 { margin: 0;	font-size: 200%; }
+h2 { font-size: 175%; }
+h3 { font-size: 140%; }
+h4 { font-size: 100%; font-weight: bold; }
+
+a, a:link {	color: #105CCF; }
+a:hover { text-decoration: none; }
+p img { vertical-align: middle; }
+a img {	border: 0; vertical-align: top; }
+h2 a img { vertical-align: bottom; }
+abbr { border-color: #CCC; }
+blockquote { margin: 1em 0; padding: 10px; border-left: #FC6 2px solid; background: #FFC; }
+hr.separator { height: 1px; border: none; }
+
+div#wrapper { margin: 0 auto; width: 710px; margin-top: 30px; }	    
+h1.header { margin: 0px; padding: 10px; font-family: Georgia, "Times New Roman", Times, serif; font-size: 200%; font-weight: normal; color: #FFF; background-color: #CCC; border-bottom: #BBB 2px solid; }
+div#flash { margin: 20px 0 10px 0; padding: 5px 10px 5px 10px; clear: both; font-size: 110%; }
+  div#flash p { margin: 0; }
+  div.error { color: #FFF; background: #F60 no-repeat 10px center; border: 1px solid #DD5800; }
+  div.notice { color: #FFF; background: #55B217 no-repeat 10px center; border: 1px solid #45A60D; }
+  div.warning { color: #FFF; background: #F60 no-repeat 10px center; border: 1px solid #DD5800; }
+  div#flash a { font-weight: bold; color: #FFF; }
+
+/* table styling */
+table { border-collapse:collapse; font-size:100%; margin:0 0 5px; }
+table.wide { width:100%; }
+table th, table td { padding:5px 10px; text-align:left; vertical-align:top; }
+table .theader { border-bottom:2px solid #DDDDDD; }
+table td { border-bottom:1px solid #F1F1F1; padding:5px 2px; }
+table td.label { font-weight:bold; }
+
+/* Form styles (based on http://nidahas.com/sandbox/form_template.html) */
+div.form-container { margin: 10px; padding: 5px; }
+
+div.form-container p { margin: 0; }
+div.form-container p.note { margin-left: 170px; font-size: 90%; color: #333; }
+div.form-container fieldset { margin: 10px 0; padding: 10px; border: #DDD 1px solid; }
+div.form-container legend { font-weight: bold; color: #666; }
+div.form-container div { padding: 0.25em 0; }
+div.form-container label, 
+div.form-container span.label { margin-right: 10px; padding-right: 10px; width: 150px; display: block; float: left; text-align: right; position: relative; }
+div.form-container label.error, 
+div.form-container span.error { color: #C00; }
+div.form-container label em, 
+div.form-container span.label em { position: absolute; right: 0; font-size: 120%; font-style: normal; color: #C00; }
+div.form-container input.error { border-color: #C00; background-color: #FEF; }
+div.form-container input:focus,
+div.form-container input.error:focus, 
+div.form-container textarea:focus {	background-color: #FFC; border-color: #FC6; }
+div.form-container div.controlset label, 
+div.form-container div.controlset input { display: inline; float: none; }
+div.form-container div.controlset div { margin-left: 170px; }
+div div.buttonrow { margin-left: 180px; }
+

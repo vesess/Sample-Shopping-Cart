@@ -6,6 +6,7 @@ require 'rack-flash'
 use Rack::Flash
 set :logging, true
 set :sessions, true
+set :public, File.dirname(__FILE__) + '/public'
 
 get '/' do
 end

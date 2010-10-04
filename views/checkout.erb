@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>My Shop</title>
+    <link media="screen" type="text/css" href="main.css" rel="stylesheet">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript">
@@ -19,115 +20,116 @@
   </head>
 
   <body>
-    <% %w(notice warning error).each do |msg| %>
-      <% unless (flash[msg.to_sym].nil? || flash[msg.to_sym].empty?) %>
-        <div id='flash' class='<%= msg %>'><%= flash[msg.to_sym] %></div>
+   <h1 class="header">My Shop</h1>
+   <div id="wrapper">
+      <% %w(notice warning error).each do |msg| %>
+        <% unless (flash[msg.to_sym].nil? || flash[msg.to_sym].empty?) %>
+          <div id='flash' class='<%= msg %>'><%= flash[msg.to_sym] %></div>
+        <% end %>
       <% end %>
-    <% end %>
 
-  <form action="/checkout" method="post">
-    <table>
-      <thead>
-        <tr>
-          <td>Item</td>
-          <td>Unit Price ($)</td>
-          <td>Quantity</td>
-        </tr>
-      </thead>
+      <form action="/checkout" method="post">
+      <table class="wide">
+        <tbody>
+          <tr class="theader">
+            <th>Item</th>
+            <th>Unit Price ($)</th>
+            <th>Quantity</th>
+          </tr>
 
-      <tbody>
-        <tr>
-          <td>My Awesome T-shirt (Large - Mens)</td>
-          <td>15.00</td>
-          <td>
-            <input type="text" name="item[][quantity]" value="0" size="2" class="quantity_field"/>
-            <input type="hidden" name="item[][unit_price]" value="15" class="unit_price_field"/>
-            <input type="hidden" name="item[][name]" value="My Awesome T-shirt (Large - Mens)"/>
-          </td>
-        </tr>
+          <tr>
+            <td>My Awesome T-shirt (Large - Mens)</td>
+            <td>15.00</td>
+            <td>
+              <input type="text" name="item[][quantity]" value="0" size="2" class="quantity_field"/>
+              <input type="hidden" name="item[][unit_price]" value="15" class="unit_price_field"/>
+              <input type="hidden" name="item[][name]" value="My Awesome T-shirt (Large - Mens)"/>
+            </td>
+          </tr>
 
-        <tr>
-          <td>My Awesome Mug</td>
-          <td>25.00</td>
-          <td>
-            <input type="text" name="item[][quantity]" value="0" size="2" class="quantity_field"/>
-            <input type="hidden" name="item[][unit_price]" value="25" class="unit_price_field"/>
-            <input type="hidden" name="item[][name]" value="My Awesome Mug"/>
-          </td>
-        </tr>
+          <tr>
+            <td>My Awesome Mug</td>
+            <td>25.00</td>
+            <td>
+              <input type="text" name="item[][quantity]" value="0" size="2" class="quantity_field"/>
+              <input type="hidden" name="item[][unit_price]" value="25" class="unit_price_field"/>
+              <input type="hidden" name="item[][name]" value="My Awesome Mug"/>
+            </td>
+          </tr>
 
-        <tr>
-          <td>My Awesome Mouse Pad</td>
-          <td>5.00</td>
-          <td>
-            <input type="text" name="item[][quantity]" value="0" size="2" class="quantity_field"/>
-            <input type="hidden" name="item[][unit_price]" value="5" class="unit_price_field"/>
-            <input type="hidden" name="item[][name]" value="My Awesome Mouse Pad"/>
-          </td>
-         </tr>
+          <tr>
+            <td>My Awesome Mouse Pad</td>
+            <td>5.00</td>
+            <td>
+              <input type="text" name="item[][quantity]" value="0" size="2" class="quantity_field"/>
+              <input type="hidden" name="item[][unit_price]" value="5" class="unit_price_field"/>
+              <input type="hidden" name="item[][name]" value="My Awesome Mouse Pad"/>
+            </td>
+           </tr>
 
-        <tr>
-          <td colspan="2">Sub Total</td>
-          <td><span id="subtotal">$0.00</span></td>
-        </tr>
+          <tr>
+            <td colspan="2">Sub Total</td>
+            <td><span id="subtotal">$0.00</span></td>
+          </tr>
 
-        <tr>
-          <td colspan="2">Coupon Code</td>
-          <td><input type="text" name="coupon_code" value="" size="10"/></td>
-        </tr>
-    </table>
+          <tr>
+            <td colspan="2">Coupon Code</td>
+            <td><input type="text" name="coupon_code" value="" size="10"/></td>
+          </tr>
+      </table>
 
-    <h3>Contact Details</h3>
-    <div class="form-container">
-       <div>
-         <label for="client_name">Name <em>*</em></label>
-         <input type="text" name="client[name]" id="client_name"/>
-       </div>
+      <h3>Contact Details</h3>
+      <div class="form-container">
+         <div>
+           <label for="client_name">Name <em>*</em></label>
+           <input type="text" name="client[name]" id="client_name"/>
+         </div>
 
-       <div>
-         <label for="client_email">Email <em>*</em></label>
-         <input type="text" name="client[email]" id="client_email"/>
-       </div>
+         <div>
+           <label for="client_email">Email <em>*</em></label>
+           <input type="text" name="client[email]" id="client_email"/>
+         </div>
 
-       <div>
-         <label for="client_phone">Phone Number</label>
-         <input type="text" name="client[phone]" id="client_phone"/>
-       </div>
-    </div>
+         <div>
+           <label for="client_phone">Phone Number</label>
+           <input type="text" name="client[phone]" id="client_phone"/>
+         </div>
+      </div>
 
-    <h3>Shipping Details</h3>
-    <div class="form-container">
-       <div>
-         <label for="client_street_address">Street Address</label>
-         <textarea name="client[street_address]" id="client_street_address" cols="30" rows="2"></textarea>
-       </div>
+      <h3>Shipping Details</h3>
+      <div class="form-container">
+         <div>
+           <label for="client_street_address">Street Address</label>
+           <textarea name="client[street_address]" id="client_street_address" cols="30" rows="2"></textarea>
+         </div>
 
-       <div>
-         <label for="client_city">City</label>
-         <input type="text" name="client[city]" id="client_city"/>
-       </div>
+         <div>
+           <label for="client_city">City</label>
+           <input type="text" name="client[city]" id="client_city"/>
+         </div>
 
-       <div>
-         <label for="client_state">State</label>
-         <input type="text" name="client[state]" id="client_state"/>
-       </div>
+         <div>
+           <label for="client_state">State</label>
+           <input type="text" name="client[state]" id="client_state"/>
+         </div>
 
-       <div>
-         <label for="client_zip">ZIP Code</label>
-         <input type="text" name="client[zip]" id="client_zip"/>
-       </div>
+         <div>
+           <label for="client_zip">ZIP Code</label>
+           <input type="text" name="client[zip]" id="client_zip"/>
+         </div>
 
-       <div>
-         <label for="client_country">Country</label>
-         <input type="text" name="client[country]" id="client_country"/>
-       </div>
+         <div>
+           <label for="client_country">Country</label>
+           <input type="text" name="client[country]" id="client_country"/>
+         </div>
 
-    </div>
+      </div>
 
-    <div class="buttonrow">
-      <input type="submit" value="Proceed"/>
-      <span><a href="/">Cancel Order</a></span>
-    </div>
+      <div class="buttonrow">
+        <input type="submit" value="Proceed"/>
+        <span><a href="/">Cancel Order</a></span>
+      </div>
 
+   </div>
   </body>
 </html>
