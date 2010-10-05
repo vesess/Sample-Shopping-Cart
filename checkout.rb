@@ -20,7 +20,7 @@ post '/checkout' do
 
    @valid_coupon_codes = ["Awesome", "Super", "002211"]
    # set the API key and subdomain for your CurdBee account.
-   CurdBee::Config.api_key = "QBikEJ1gATy_G4xHljs6"
+   CurdBee::Config.api_key = "7iijtV-8KwDPKTVqSnXM"
    CurdBee::Config.subdomain = "laktek"
 
    # create client
