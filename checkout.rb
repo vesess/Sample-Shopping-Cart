@@ -53,6 +53,7 @@ post '/checkout' do
               :client_id => @client.id,
               :summary => "Purchase from My Awesome store",
               :line_items_attributes => @line_items, 
+              :payment_options => ["paypal", "gcheckout", "twocheckout", "authorizenet"],
               :notes => "We will ship the items within 2 days of receiving the payment"
             )
    # apply discount if there's a valid coupoun code
