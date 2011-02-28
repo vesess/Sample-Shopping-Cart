@@ -20,8 +20,8 @@ post '/checkout' do
 
    @valid_coupon_codes = ["Awesome", "Super", "002211"]
    # set the API key and subdomain for your CurdBee account.
-   CurdBee::Config.api_key = "QNcxN8fFI_Y-W7kvc-mB"
-   CurdBee::Config.subdomain = "sampleshop"
+   CurdBee::Config.api_key = "API_KEY"
+   CurdBee::Config.subdomain = "SUBDOMAIN"
 
    # create client
    @client = CurdBee::Client.new(:name => params['client']['name'],
