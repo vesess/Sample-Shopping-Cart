@@ -20,8 +20,8 @@ post '/checkout' do
 
    @valid_coupon_codes = ["Awesome", "Super", "002211"]
    # set the API key and subdomain for your CurdBee account.
-   CurdBee::Config.api_key = "7iijtV-8KwDPKTVqSnXM"
-   CurdBee::Config.subdomain = "laktek"
+   CurdBee::Config.api_key = "QNcxN8fFI_Y-W7kvc-mB"
+   CurdBee::Config.subdomain = "sampleshop"
 
    # create client
    @client = CurdBee::Client.new(:name => params['client']['name'],
@@ -79,8 +79,8 @@ post '/checkout' do
      flash[:error] = "Failed to send the invoice. Did you enter a valid email?"
      redirect '/checkout'
     end
-  rescue => e
-    flash[:error] = "Following issue occured when processing your order - #{e}"
-   redirect '/checkout'
-  end
+   rescue => e
+     flash[:error] = "Following issue occured when processing your order - #{e}"
+    redirect '/checkout'
+   end
 end
